@@ -9,6 +9,7 @@ Você tem um projeto de jogo de sobrevivência em uma floresta no estilo "GreenH
 Você entra no jogo e ele está funcionando e gerando do jeito que você queria, aí você coloca na mão do seu colega para ele testar, mas ele mal sai andando e o jogo dele começa a travar e fechar.
 
 Quando você percebe que é porque o note/pc dele não possui tanta VRAM e acaba não suportando a quantidade de objetos gerados na tela.
+
 Sem Flyweight:
 <img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/77e964a5-7495-4c68-86b8-464353c0892d" />
 <img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/a0f1ba54-ca12-4651-b694-246cfb2985a3" />
@@ -25,6 +26,7 @@ Assim o cliente calcula ou armazena os dados extrínsecos dos Flyweight, com o F
 <img width="846" height="298" alt="image" src="https://github.com/user-attachments/assets/e662b6bb-ba55-4b65-97d1-a51b2943da6f" />
 
 Isso permite que o gasto seja consideravelmente reduzido da memória RAM da máquina, já que ele só precisa consumir o flyweight uma vez.
+
 Com Flyweight:
 <img width="300" height="220" alt="image" src="https://github.com/user-attachments/assets/c78e68e8-2fac-4375-b71f-79735de783fb" />
 <img width="300" height="220" alt="image" src="https://github.com/user-attachments/assets/f54928a7-2aa7-4c7a-8b0a-fdd545866012" />
