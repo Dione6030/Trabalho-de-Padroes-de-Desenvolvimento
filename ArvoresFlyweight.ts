@@ -2,37 +2,38 @@ class tipoArvore {
     private _especie: string;
     private _textura: HTMLImageElement;
     private _cor: string;
+    private _modelo: any;
 
-    constructor(especie: string, textura: HTMLImageElement, cor: string) {
+    constructor(especie: string, textura: HTMLImageElement, cor: string, modelo: any) {
         this._especie = especie;
         this._textura = textura;
         this._cor = cor;
+        this._modelo = modelo;
     }
-
     get especie(): string {
         return this._especie;
     }
-
     get textura(): HTMLImageElement {
         return this._textura;
     }
-
     get cor(): string {
         return this._cor;
     }
-
     set especie(value: string) {
         this._especie = value;
     }
-
     set textura(value: HTMLImageElement) {
         this._textura = value;
     }
-
     set cor(value: string) {
         this._cor = value;
     }
-
+    get modelo(): any {
+        return this._modelo;
+    }
+    set modelo(value: any) {
+        this._modelo = value;
+    }
     public desenhar(x: number, y: number, z: number): void {
         console.log(`Desenhando árvore do tipo ${this._especie} na posição (${x}, ${y}, ${z}) com cor ${this._cor}`);
     }
@@ -45,13 +46,13 @@ class fabricarArvore {
         this.arvoresTipo = new Map();
     }
 
-    public pegarArvore(especie: string, textura: HTMLImageElement, cor: string) {
+    public pegarArvore(especie: string, textura: HTMLImageElement, cor: string, modelo: any) {
         const chave = `${especie}-${textura.src}-${cor}`;
 
         let tipo = this.arvoresTipo.get(chave);
 
         if (!tipo) {
-            tipo = new tipoArvore(especie, textura, cor);
+            tipo = new tipoArvore(especie, textura, cor, modelo);
             this.arvoresTipo.set(chave, tipo);
         }
         return tipo;
@@ -85,8 +86,8 @@ class FlorestaFly {
         this.fabricarArvore = new fabricarArvore();
     }
 
-    public plantarArvore(x: number, y: number, z: number, especie: string, textura: HTMLImageElement, cor: string): ArvoreFly {
-        const tipo = this.fabricarArvore.pegarArvore(especie, textura, cor);
+    public plantarArvore(x: number, y: number, z: number, especie: string, textura: HTMLImageElement, cor: string, modelo: any): ArvoreFly {
+        const tipo = this.fabricarArvore.pegarArvore(especie, textura, cor, modelo);
         const arvore = new ArvoreFly(x, y, z, tipo);
         this.arvores.push(arvore);
         return arvore;
