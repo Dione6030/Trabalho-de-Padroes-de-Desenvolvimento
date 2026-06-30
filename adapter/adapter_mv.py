@@ -1,3 +1,4 @@
+import utilitarios as ui
 from mv import MV
 from interface import SistemaHospitalar
 
@@ -8,6 +9,6 @@ class MVAdapter(SistemaHospitalar):
 
     def buscar_paciente(self, registro):
 
-        print("[Adapter] Traduzindo buscar_paciente() -> localizar()")
+        ui.aviso(" [Adapter] Traduzindo buscar_paciente() -> localizar() - [Método do sistema MV]")
 
         return self.mv.localizar(registro)

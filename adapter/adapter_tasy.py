@@ -1,5 +1,8 @@
+import utilitarios as ui
+
 from tasy import Tasy
 from interface import SistemaHospitalar
+
 
 class TasyAdapter(SistemaHospitalar):
 
@@ -8,6 +11,6 @@ class TasyAdapter(SistemaHospitalar):
 
     def buscar_paciente(self, registro):
 
-        print("[Adapter] Traduzindo buscar_paciente() -> consultar()")
+        ui.aviso(" [Adapter] Traduzindo buscar_paciente() -> consultar() - [Método do sistema Tasy]")
 
         return self.tasy.consultar(registro)
